@@ -1,0 +1,16 @@
+#!/bin/bash
+
+mkdir d21_m05_14
+cd d21_m05_14
+mkdir 11 22 33
+cd 33
+touch 123.txt 125.txt 127.txt 234.json 236.json
+mkdir  100 101 102
+ls -la
+cd ../
+mv 33/123.txt 22/123.txt
+mv 33/125.txt 22/125.txt
+
+
+~
+~
