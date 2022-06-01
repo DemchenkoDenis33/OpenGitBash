@@ -150,11 +150,14 @@ my name is Denys
 :wq
 
 19. Найти путь к файлу tf_4.txt
-$ find -name tf_4.txt
-./inner_dir_1/tf_4.txt
+$ find ../ -name tf_4.txt
+../dir_1/inner_dir_1/tf_4.txt
+
 
 
 20. Отчистить файл tf_4.txt от содержимого без удаления самого файла.
+$ > inner_dir_1/tf_4.txt
+или
 $ echo -n > tf_4.txt
 
 
@@ -200,12 +203,12 @@ $ grep -i sec *.txt
 
 
 25. Найти строки в файлах где есть только комбинация букв “sec” в текущей папке
-$ grep 'sec\>' *.txt
+$ grep 'sec\>' *.txt   или   $ grep -w sec *.txt
 tf_2.txt:“the sec 3”
 
 
 26. Найти строки в файлах где есть только комбинация букв “sec” в любом регистре в текущей папке
-$ grep -i 'sec\>' *.txt
+$ grep -i 'sec\>' *.txt  или  $ grep -iw sec *.txt
 tf_2.txt:“the sec 3”
 
 
@@ -227,13 +230,13 @@ $ grep -r second ./*
 
 
 30. Найти только путь и название файла в строках которых есть комбинация букв “second” в текущей папке
-$ grep -il second ./*
+$ find ./* |xargs grep -il second ./*
 grep: ./inner_dir_1: Is a directory
 ./tf_2.txt
 
 
 31. Найти все строки во всех файлах где нет комбинации “second”
-$ grep -iv second ./*
+$ grep -irv second ./*
 grep: ./inner_dir_1: Is a directory
 ./tf_2.txt:-the first 1
 ./tf_2.txt:-the third 3
@@ -243,7 +246,7 @@ grep: ./inner_dir_1: Is a directory
 
 
 32. Найти только название и путь к файлам где нет комбинации “second”
-$ grep -rvl second ./*
+$ grep -rLl second ./*
 ./inner_dir_1/tf_3.txt
 ./inner_dir_1/tF_5.txt
 ./tf_2.txt
@@ -266,7 +269,7 @@ $ head -4 tf_2.txt
 
 
 35. Команда в одну строку. Создать папку и создать текстовый файл с содержимым.
-$ mkdir 35.task | touch file_35.txt |cat >> file_35.txt | echo "1 2 HI 2 1" >> file_35.txt
+$ mkdir 35.task |cat >> file_35.txt | echo "1 2 HI 2 1" >> file_35.txt
 
 
 36. Команда в одну строку. Переместить в любую одну папку текстовые файлы у которых в содержимом есть слово “sec
