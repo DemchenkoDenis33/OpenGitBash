@@ -1,0 +1,619 @@
+Для выполнения задания у вас должен быть установлен для Windows - GitBash.
+Создан аккаунт в GitHub
+
+Все шаги сценария выполняйте в терминале GitBush, Terminal, в папке под гитом.
+
+Как отправить ДЗ на проверку.
+ 1. Создайте текстоовый файл как в первом ДЗ по Terminal.
+ 2. Сценарий перенесите в этот файл.
+ 3. На против каждого действия - напишите команду в GitBash
+
+Файл со сценарием и ссылку на свой гит хаб отправляйте менторам на проверку.
+
+
+
+JSON
+
+
+1. Создать внешний репозиторий c названием JSON.
+Заходим на сайт GitBash и создаем там новый репозиторий
+копируем ссылку
+
+
+2. Клонировать репозиторий JSON на локальный компьютер.
+$ git clone https://github.com/DemchenkoDenis33/JSON.git
+Cloning into 'JSON'...
+warning: You appear to have cloned an empty repository.
+
+
+3. Внутри локального JSON создать файл “new.json”.
+$ cd JSON
+$ touch  new.json
+
+
+4. Добавить файл под гит.
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        new.json
+
+
+$ git add new.json
+
+
+
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   new.json
+
+
+
+5. Закоммитить файл.
+$ git commit -m "new.json"
+[main (root-commit) 81db103] new.json
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 new.json
+
+
+6. Отправить файл на внешний GitHub репозиторий
+$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 216 bytes | 216.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/DemchenkoDenis33/JSON.git
+ * [new branch]      main -> main
+
+
+7. Отредактировать содержание файла “new.json”
+   - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата).
+   Всё написать в формате JSON.
+$ vim new.json
+
+{
+ "Person": {
+  "firstName": "Denys",
+  "lastName": "Demchenko",
+  "age": "32year"
+ },
+ "Pets": {
+  "mantis_insect": "2",
+  "ants": "78",
+  "aquarium_fish": "5"
+ },
+ "future_desired_salary": {
+     "at_first": "400$",
+     "in_half_a_year": "600-700$"
+ }
+}
+
+
+Esc
+:wq
+
+
+8. Отправить изменения на внешний репозиторий
+$ git status
+$ git add new.json
+$ git status
+    modified:   new.json
+$ git commit -m "new.json"
+$ git push
+
+
+
+9. Создать файл preferences.json
+$ touch preferences.json
+
+
+
+10. В файл preferences.json добавить информацию о своих предпочтениях 
+(Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате JSON.
+$ cat >> preferences.json
+
+{
+ "My_preferences": {
+   "Favorite_film": "Forrest GUMP",
+   "Favorite_series": "they are very many",
+   "Favorite_food": "ribs in honey sauce",
+   "Favorite_time_of_year": "winter and summer",
+   "Country_I_want_to_visit": "Germany and Switzerland"
+  }
+}
+
+
+Ctrl+c
+
+
+
+11. Создать файл skils.json добавить информацию
+    о скиллах которые будут изучены на курсе в формате JSON
+$ cat > skils.json
+
+{
+  "Course_program": {
+   "1": "Linux command line (terminal)",
+   "2": "bash basics",
+   "3": "Building applications on Xcode",
+   "4": "Building Android Applications with Android Studio",
+   "5": "Mobile testing",
+   "6": "Dev Tools of web browsers",
+   "7": "What is JSON, XML. Their structure",
+   "8": "and so on"
+   }
+}
+
+Ctrl+c
+
+
+
+12. Отправить сразу 2 файла на внешний репозиторий.
+$ git status
+$ git add preferences.json skils.json
+$ git status
+$ git commit -m "preferences.json skils.json"
+$ git push
+
+
+
+13. На веб интерфейсе создать файл bug_report.json.
+
+в репозитории в папке JSON нажимаем add file 
+потом Create new file
+вводим bug_report.json и нажимаем создать.
+у нас в репозитории создался файл bug_report.json
+
+
+
+14. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+заходим в наш файл bug_report.json
+нажимаем Edit this file
+потом Commit changes
+
+
+
+15. На веб интерфейсе модифицировать файл bug_report.json,
+    добавить баг репорт в формате JSON
+нажимаем Edit this file
+
+{
+  "Bug_Report": {
+    "Telegram_nickname": "DemchenkoDenys",
+    "Bug_id": "   ",
+    "Title":  "   ",
+    "Severity": "   ",
+    "Priority": "   ",
+    "Environment": "    ",
+    "Precondition": "   ",
+    "STR": "    ",
+    "AR": "    ",
+    "ER": "   ",
+    "Attachments": "   "
+}
+
+
+
+
+16. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+в строке Commit changes пишем  add file
+
+нажимаем Commit changes
+
+
+
+17. Синхронизировать внешний и локальный репозиторий JSON
+в терминале пишем:
+$ git fetch
+$ git pull
+$ cat bug_report.json
+
+{
+  "Bug_Report": {
+    "Telegram_nickname": "DemchenkoDenys",
+    "Bug_id": "   ",
+    "Title":  "   ",
+    "Severity": "   ",
+    "Priority": "   ",
+    "Environment": "    ",
+    "Precondition": "   ",
+    "STR": "    ",
+    "AR": "    ",
+    "ER": "   ",
+    "Attachments": "   "
+}
+
+
+
+
+
+
+
+XML
+
+
+ 1. Создать внешний репозиторий c названием XML.
+Заходим на сайт GitBash и создаем там новый репозиторий
+копируем ссылку
+
+
+ 2. Клонировать репозиторий XML на локальный компьютер.
+$ git clone https://github.com/DemchenkoDenis33/XML.git
+Cloning into 'XML'...
+warning: You appear to have cloned an empty repository.
+
+
+ 3. Внутри локального XML создать файл “new.xml”.
+$ cd XML
+$ touch  new.xml
+
+
+ 4. Добавить файл под гит.
+$ git add new.xml
+
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   new.xml
+
+
+ 5. Закоммитить файл.
+$ git commit -m "new.xml"
+[main (root-commit) 0d2b1bc] new.xml
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 new.xml
+
+
+
+ 6. Отправить файл на внешний GitHub репозиторий.
+$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 214 bytes | 214.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/DemchenkoDenis33/XML.git
+ * [new branch]      main -> main
+
+
+
+ 7. Отредактировать содержание файла “new.xml” 
+    - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). 
+    Всё написать в формате XML.
+$ vim new.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+ <Person>
+      <firstName>Denys</firstName>
+      <lastName>Demchenko</lastName>
+      <age>32year</age>
+     <Pets>
+       <mantis_insect>2</mantis_insect>
+       <ants>78</ants>
+       <aquarium_fish>5</aquarium_fish>
+      </Pets>
+      <future_desired_salary>
+       <at_first>400$</at_first>
+       <in_half_a_year>600-700$</in_half_a_year>
+      </future_desired_salary>
+ </Person>
+
+
+Esc
+:wq
+
+
+
+ 8. Отправить изменения на внешний репозиторий.
+$ git status
+$ git add new.xml
+$ git status
+    modified:   new.xml
+$ git commit -m "new.xml"
+$ git push
+
+
+
+ 9. Создать файл preferences.xml
+$ touch preferences.xml
+
+
+ 10. В файл preferences.xml добавить информацию о своих предпочтениях 
+     (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате XML.
+$ cat >> preferences.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+ <My_preferences>
+     <Favorite_film>Forrest GUMP</Favorite_film>
+     <Favorite_series>they are very many</Favorite_series>
+     <Favorite_food>ribs in honey sauce</Favorite_food>
+     <Favorite_time_of_yeard>winter and summer</Favorite_time_of_year>
+     <Country_I_want_to_visit>Germany and Switzerland</Country_I_want_to_visit>
+ </My_preferences>
+
+
+Ctrl+c
+
+
+ 11. Создать файл skils.xml добавить информацию о скиллах которые будут изучены на курсе в формате XML
+$ cat > skils.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+ <Course_program>
+     <1>Linux command line (terminal)</1>
+     <2>bash basics</2>
+     <3>Building applications on Xcode</3>
+     <4>Building Android Applications with Android Studio</4>
+     <5>Mobile testing</5>
+     <6>Dev Tools of web browsers</6>
+     <7>What is JSON, XML. Their structure</7>
+     <8>and so on</8>
+ </Course_program>
+
+
+Ctrl+c
+
+
+
+ 12. Сделать коммит в одну строку.
+$ git add .; git commit -m "add 2 xml files"
+
+
+
+
+ 13. Отправить сразу 2 файла на внешний репозиторий.
+$ git push
+
+
+ 14. На веб интерфейсе создать файл bug_report.xml.
+В репозитории в папке XML нажимаем add file 
+потом Create new file
+вводим bug_report.xml и нажимаем Commit new file.
+у нас в внешнем репозитории создался файл bug_report.xml
+
+ 15. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+заходим в наш файл bug_report.xml
+нажимаем Edit this file
+вносим изменения в 1-вую строку (<?xml version="1.0" encoding="UTF-8"?>)
+потом нажемаем Commit changes
+
+
+ 16. На веб интерфейсе модифицировать файл bug_report.xml, добавить баг репорт в формате XML.
+заходим в наш файл bug_report.xml
+нажимаем Edit this file
+
+<?xml version="1.0" encoding="UTF-8"?>
+ <Bug_Report>
+     <Telegram_nickname>DemchenkoDenys</Telegram_nickname>
+     <Bug_id>....</Bug_id>
+     <Title>....</Title>
+     <Severity>....</Severity>
+     <Priority>....</Priority>
+     <Precondition>....</Precondition>
+     <STR>....</STR>
+     <AR>....</AR>
+     <ER>....</ER>
+     <Attachments>....</Attachments>
+ </Bug_Report>
+
+
+
+
+ 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+в строке Commit changes пишем  add file
+
+нажимаем Commit changes
+
+
+ 18. Синхронизировать внешний и локальный репозиторий XML
+$ git fetch
+$ git pull
+$ cat bug_report.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+ <Bug_Report>
+     <Telegram_nickname>DemchenkoDenys</Telegram_nickname>
+     <Bug_id>....</Bug_id>
+     <Title>....</Title>
+     <Severity>....</Severity>
+     <Priority>....</Priority>
+     <Precondition>....</Precondition>
+     <STR>....</STR>
+     <AR>....</AR>
+     <ER>....</ER>
+     <Attachments>....</Attachments>
+ </Bug_Report>
+
+
+
+
+
+
+TXT
+
+
+ 1. Создать внешний репозиторий c названием TXT.
+Заходим на сайт GitBash и создаем там новый репозиторий
+копируем ссылку
+
+
+ 2. Клонировать репозиторий TXT на локальный компьютер.
+$ git clone https://github.com/DemchenkoDenis33/TXT.git
+
+
+
+ 3. Внутри локального TXT создать файл “new.txt”.
+$ cd TXT
+$ touch  new.txt
+
+
+ 4. Добавить файл под гит.
+$ git add new.txt
+
+
+
+ 5. Закоммитить файл.
+$ git commit -m "new.txt"
+
+[main (root-commit) c320754] new.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 new.txt
+
+
+
+ 6. Отправить файл на внешний GitHub репозиторий.
+$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 214 bytes | 214.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/DemchenkoDenis33/TXT.git
+ * [new branch]      main -> main
+
+
+
+
+ 7. Отредактировать содержание файла “new.txt” 
+    - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). 
+    Всё написать в формате TXT.
+$ vim new.txt
+
+Person:
+  firstName Denys
+  lastName Demchenko
+  age 32year
+Pets:
+  mantis insect 2
+  ants 78
+  aquarium fish 5
+future desired salar:
+  at first 400$
+  in half a year 600-700$
+
+Esc
+:wq
+
+
+
+ 8. Отправить изменения на внешний репозиторий.
+$ git status
+$ git add new.txt
+$ git status
+    modified:   new.txt
+$ git commit -m "new.txt"
+    [main 785e48e] new.txt
+ 1 file changed, 12 insertions(+)
+
+$ git push
+
+
+
+ 9. Создать файл preferences.txt
+$ touch preferences.txt
+
+
+
+ 10. В файл preferences.txt добавить информацию о своих предпочтениях 
+     (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате TXT.
+$ cat >> preferences.txt
+
+My preferences:
+ Favorite film - Forrest GUMP
+ Favorite series - they are very many
+ Favorite food - ribs in honey sauce
+ Favorite time of yeard - winter and summer
+ Country I want to visit - Germany and Switzerland
+
+
+Ctrl+c
+
+
+ 11. Создать файл skils.txt добавить информацию о скиллах которые будут изучены на курсе в формате TXT
+$ cat > skils.txt
+
+Course program:
+ 1 Linux command line
+ 2 bash basics
+ 3 Building applications on Xcode
+ 4 Building Android Applications with Android Studio
+ 5 Mobile testing
+ 6 Dev Tools of web browsers
+ 7 What is JSON, XML. Their structure
+ 8 and so on
+
+
+Ctrl+c
+
+
+
+ 12. Сделать коммит в одну строку.
+$ git add .; git commit -m "add 2 txt files"
+
+
+
+
+ 13. Отправить сразу 2 файла на внешний репозиторий.
+$ git push
+
+
+ 14. На веб интерфейсе создать файл bug_report.txt.
+В репозитории в папке TXT нажимаем add file 
+потом Create new file
+вводим bug_report.txt и нажимаем Commit new file.
+у нас в внешнем репозитории создался файл bug_report.txt
+
+
+ 15. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+заходим в наш файл bug_report.txt
+нажимаем Edit this file
+вносим изменения в 1-вую строку (bug report structure>)
+потом нажемаем Commit changes
+
+
+ 16. На веб интерфейсе модифицировать файл bug_report.txt, добавить баг репорт в формате TXT.
+заходим в наш файл bug_report.txt
+нажимаем Edit this file
+Bug template (Summary) -  Шаблон ошибки
+Telegram nickname - DemchenkoDenys
+
+Bug_id - номер бага
+Title - заголовок
+
+Severity - Серьезность влияние дефекта на работоспособность приложения
+Priority - Приоритет указывающий на очередность выполнения задачи или устранения дефекта
+Environmemt - Окружающая среда  (версия О.С.  Браузера и.т.д.)
+
+Precondition - Описание предварительного условия для воспроизведения бага
+
+STR - Описание шагов для воспроизведения бага  1)2)3) ит.д.
+
+AR - Описание РЕАЛЬНОГО/ТЕКУЩЕГО поведения системы
+ER - Описание того, как система ДОЛЖНА работать
+
+Attachments - Прикрепление к баг репорту (сыллка, видео, скрин и.т.д)
+
+
+
+
+ 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+в строке Commit changes пишем  add file
+
+нажимаем Commit changes
+
+
+ 18. Синхронизировать внешний и локальный репозиторий TXT
+$ git fetch
+$ git pull
+$ cat bug_report.txt
+
