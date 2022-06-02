@@ -65,6 +65,28 @@ $ git push
 
 
 7. В ветке CheckLists набросать структуру чек листа.
+$ git checkout CheckLists
+$ cat > structure_CheckLists.txt
+
+
+
 8. Запушить структуру на внешний репозиторий
+$ git add structure_CheckLists.txt
+$ git commit -m "structure_CheckLists.txt"
+$ git push
+
+(файл появился на внеш. репоз. в ветке CheckLists)
+
+
+
 9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+На внеш. репоз. нажимаем (Pull requests) - (Compue & pull request) - (Create pull request) -создаем запрос на marge
+(marge pull request) - (commit marge) -commit
+
 10. Синхронизировать Внешнюю и Локальную ветки Main
+$ git checkout main
+$ git fetch
+$ git pull
+(после чего фал появится на лок. в ветке Main)
+
+
