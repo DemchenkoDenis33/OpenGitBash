@@ -10,11 +10,60 @@ GitHub. HW_2
 - Charles
 - Mobile testing
 
+git branch (name)
+
+$ git branch
+  Bag_Reports
+  Charles
+  CheckLists
+  Jmeter
+  Mobile_testing
+  Postman
+  SQL
+* main
+
+
+
 2. Запушить все ветки на внешний репозиторий
+
+$ git push -u origin Postman
+$ git push -u origin Jmeter
+$ git push -u origin CheckLists
+$ git push -u origin Bag_Reports
+$ git push -u origin SQL
+$ git push -u origin Charles
+$ git push -u origin Mobile_testing
+
+
+
 3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
+$ git checkout Bag_Reports
+$ cat > structure_bag_report.txt
+
+
+
 4. Запушить структуру багрепорта на внешний репозиторий
+
+$ git add structure_bag_report.txt
+$ git commit -m "structure_bag_report.txt"
+$ git push
+(файл появился на внеш. репоз. в ветке Bag_Reports)
+
+
 5. Вмержить ветку Bag Reports в Main
+$ git checkout main
+$ git merge Bag_Reports -m "Bag_Reports"
+
+
 6. Запушить main на внешний репозиторий.
+user@WIN-KP0LKI5VOVO MINGW64 /d/OpenGitBash/OpenGitBash (main)
+$ git add Git_Homework_2  - (ранее, в этой папке когда я был в ветке Bag_Reports (п.3)  я создал файл structure_bag_report.txt) 
+$ git commit -m "Git_Homework_2"
+$ git push
+(на внешнем репоз. в ветке main появилась папка в нутри которой есть файл structure_bag_report.txt)
+
+
+
 7. В ветке CheckLists набросать структуру чек листа.
 8. Запушить структуру на внешний репозиторий
 9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
