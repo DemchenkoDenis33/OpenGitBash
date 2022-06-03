@@ -26,6 +26,7 @@ $ git branch
 
 2. Запушить все ветки на внешний репозиторий
 
+
 $ git push -u origin Postman
 $ git push -u origin Jmeter
 $ git push -u origin CheckLists
@@ -33,7 +34,8 @@ $ git push -u origin Bag_Reports
 $ git push -u origin SQL
 $ git push -u origin Charles
 $ git push -u origin Mobile_testing
-
+или
+$ git push --all
 
 
 3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
@@ -46,13 +48,13 @@ $ cat > structure_bag_report.txt
 
 $ git add structure_bag_report.txt
 $ git commit -m "structure_bag_report.txt"
-$ git push
+$ git push -u origin Bag_Reports
 (файл появился на внеш. репоз. в ветке Bag_Reports)
 
 
 5. Вмержить ветку Bag Reports в Main
 $ git checkout main
-$ git merge Bag_Reports -m "Bag_Reports"
+$ git merge Bag_Reports -m "Bag_Reports"  или git merge Bag_Reports
 
 
 6. Запушить main на внешний репозиторий.
@@ -73,7 +75,7 @@ $ cat > structure_CheckLists.txt
 8. Запушить структуру на внешний репозиторий
 $ git add structure_CheckLists.txt
 $ git commit -m "structure_CheckLists.txt"
-$ git push
+$ git push -u origin CheckLists
 
 (файл появился на внеш. репоз. в ветке CheckLists)
 
